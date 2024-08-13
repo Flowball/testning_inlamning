@@ -1,29 +1,12 @@
-import { useContext } from "react";
-import { Context } from "../PickContext";
+import { IoLogoGithub } from "react-icons/io5";
 
 export default function Header() {
-  const [context, setContext] = useContext(Context);
   return (
-    <header className="flex flex-col">
+    <header className="flex items-center justify-between">
       <h1 className="text-5xl py-3">Calculator</h1>
-      <div className="flex text-xl lg:text-3xl overflow-x-auto snap-x">
-        <div
-          className="border p-5 w-full text-center hover:bg-black transition-all hover:text-white hover:cursor-pointer"
-          onClick={() => {
-            setContext("percentage");
-          }}
-        >
-          Percentage
-        </div>
-        <div
-          className="border p-5 w-full text-center hover:bg-black transition-all hover:text-white hover:cursor-pointer"
-          onClick={() => {
-            setContext("bmi");
-          }}
-        >
-          BMI
-        </div>
-      </div>
+      <a href="https://github.com/Flowball" target="_blank" data-testid="header-icon">
+        <IoLogoGithub className="size-10 mx-2" />
+      </a>
     </header>
   );
 }
