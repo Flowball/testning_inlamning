@@ -18,7 +18,7 @@ export default function Percentage() {
     setResult(calcResult);
   };
   return (
-    <div>
+    <div data-testid="percentage">
       <h1>Calculate percentage</h1>
       <form className="flex  gap-2 items-center">
         <p>What is</p>

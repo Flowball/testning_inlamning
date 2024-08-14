@@ -12,6 +12,7 @@ export default function NavBar() {
         onClick={() => {
           setContext("percentage");
         }}
+        data-testid="navbar-percentage"
       >
         Percentage
       </div>
@@ -22,6 +23,7 @@ export default function NavBar() {
         onClick={() => {
           setContext("bmi");
         }}
+        data-testid="navbar-bmi"
       >
         BMI
       </div>
