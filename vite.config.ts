@@ -7,6 +7,14 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     setupFiles: ["src/test-setup.ts"],
-    coverage: { provider: "v8", exclude: [...coverageConfigDefaults.exclude, "src/main.tsx"] },
+    coverage: {
+      provider: "v8",
+      exclude: [
+        ...coverageConfigDefaults.exclude,
+        "src/main.tsx",
+        "postcss.config.js",
+        "tailwind.config.js",
+      ],
+    },
   },
 });

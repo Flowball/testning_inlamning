@@ -38,10 +38,22 @@ describe("Initial test for visual elements", () => {
 describe("Functional calculator  test - BMI", () => {
   it("should calculate BMI", () => {
     render(<BMI />);
+    //for all different results
+    fireEvent.input(screen.getByTestId("bmi-length"), { target: { value: "200" } });
+    fireEvent.input(screen.getByTestId("bmi-weight"), { target: { value: "20" } });
+    fireEvent.click(screen.getByTestId("bmi-submit"));
+    expect(screen.getByTestId("bmi-result")).toHaveTextContent("5");
+
     fireEvent.input(screen.getByTestId("bmi-length"), { target: { value: "195" } });
     fireEvent.input(screen.getByTestId("bmi-weight"), { target: { value: "95" } });
     fireEvent.click(screen.getByTestId("bmi-submit"));
     expect(screen.getByTestId("bmi-result")).toHaveTextContent("24.98");
+
+    fireEvent.input(screen.getByTestId("bmi-length"), { target: { value: "20" } });
+    fireEvent.input(screen.getByTestId("bmi-weight"), { target: { value: "300" } });
+    fireEvent.click(screen.getByTestId("bmi-submit"));
+    expect(screen.getByTestId("bmi-result")).toHaveTextContent("7500");
+
     // Kör igen för att verifiera
     fireEvent.input(screen.getByTestId("bmi-length"), { target: { value: "185" } });
     fireEvent.input(screen.getByTestId("bmi-weight"), { target: { value: "95" } });
