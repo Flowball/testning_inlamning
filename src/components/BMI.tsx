@@ -1,14 +1,16 @@
 import { useState } from "react";
 import OldResults from "./OldResults";
 
-interface OldItems {
-  oldResults: { length: number; weight: number; result: number }[];
+interface OldItem {
+  length: number;
+  weight: number;
+  result: number;
 }
 export default function BMI() {
   const [length, setLength] = useState(0);
   const [weight, setWeight] = useState(0);
   const [result, setResult] = useState(0);
-  const [oldResults, setOldResults] = useState<OldItems[]>([]);
+  const [oldResults, setOldResults] = useState<OldItem[]>([]);
 
   const handleResponse = () => {
     if (result < 18.5) return "Underweight";
