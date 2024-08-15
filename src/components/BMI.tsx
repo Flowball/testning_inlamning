@@ -30,14 +30,14 @@ export default function BMI() {
   };
 
   return (
-    <div data-testid="bmi">
-      <h1>Calculate BMI</h1>
-      <form onSubmit={handleCalc}>
+    <div data-testid="bmi" className="flex flex-col">
+      <h1 className="text-2xl p-4">Calculate BMI</h1>
+      <form onSubmit={handleCalc} className="flex flex-col  p-4 md:self-center gap-4">
         <div>
           <p>Length (CM)</p>
           <input
             type="number"
-            className="border"
+            className="border p-2 rounded-md w-full md:w-64 md:self-center"
             onChange={(e) => setLength(Number(e.target.value))}
             data-testid="bmi-length"
           />
@@ -46,19 +46,24 @@ export default function BMI() {
           <p>Weight (KG)</p>
           <input
             type="number"
-            className="border"
+            className="border p-2 rounded-md w-full md:w-64 md:self-center"
             onChange={(e) => setWeight(Number(e.target.value))}
             data-testid="bmi-weight"
           />
         </div>
-        <button type="submit" className="border p-2" data-testid="bmi-submit">
+        <button
+          type="submit"
+          className="border p-2 hover:bg-black hover:text-white transition-all bg-slate-300 rounded-md md:w-64 md:self-center"
+          data-testid="bmi-submit"
+          disabled={weight < 1 && length < 1}
+        >
           Calculate
         </button>
       </form>
       {result === 0 ? null : (
-        <div>
+        <div className="flex flex-col p-4 self-center text-2xl">
           <h1 data-testid="bmi-result">BMI Calculated: {result}</h1>
-          <p>{handleResponse()}</p>
+          <p className="text-center">{handleResponse()}</p>
         </div>
       )}
       <OldResults oldResults={oldResults} />

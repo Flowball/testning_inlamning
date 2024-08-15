@@ -4,6 +4,7 @@ import App from "./App";
 import BMI from "./components/BMI";
 import Percentage from "./components/Percentage";
 
+// SKRIV MED ETT TEST FÖR ATT TESTA CONTEXT OCKSÅ ⚠️
 describe("Initial test for visual elements", () => {
   it("should render header title", () => {
     render(<App />);

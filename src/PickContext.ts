@@ -1,3 +1,5 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
-export const Context = createContext(["", () => {}]);
+type ContextType = [string, Dispatch<SetStateAction<string>>];
+
+export const Context = createContext<ContextType>(["", () => {}]);

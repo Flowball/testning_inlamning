@@ -4,7 +4,7 @@ interface Props {
 
 export default function OldResults({ oldResults }: Props) {
   return (
-    <div>
+    <div className="flex flex-col p-4 md:self-center text-lg">
       <h2>Old Calculations:</h2>
       <ul data-testid="bmi-oldCalc">
         {oldResults.map((calc, index) => (
