@@ -4,8 +4,8 @@ import App from "./App";
 import BMI from "./components/BMI";
 import Percentage from "./components/Percentage";
 
-// SKRIV MED ETT TEST FÖR ATT TESTA CONTEXT OCKSÅ ⚠️
 describe("Initial test for visual elements", () => {
+  // HADE VELAT HA ETT TEST SOM TESTAR CONTEXT, KUNDE INTE LISTA UT HUR JAG GÖR DET!!!
   it("should render header title", () => {
     render(<App />);
     expect(screen.getByRole("heading")).toHaveTextContent("Calculator");
@@ -24,7 +24,8 @@ describe("Initial test for visual elements", () => {
     expect(navbarPercentage).toBeVisible();
     expect(navBarBMI).toBeVisible();
   });
-  it("should click navbar options to render components", () => {
+
+  it("should click navbar options to render components, updating context", () => {
     render(<App />);
     const navbarPercentage = screen.getByTestId("navbar-percentage");
     const navBarBMI = screen.getByTestId("navbar-bmi");
